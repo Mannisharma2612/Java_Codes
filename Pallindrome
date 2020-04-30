@@ -1,0 +1,30 @@
+import java.util.Scanner;
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) 
+  {
+	    Pallindrome P1 = new Pallindrome(); // creating an object //
+      Scanner scan = new Scanner(System.in);
+      int n = scan.nextInt();
+      P1.pallindrome_num(n); // calling the pallindrome_num method //
+	}
+}
+class Pallindrome 
+{
+    void pallindrome_num(int num)
+    {
+        int rev=0,rem,n;
+        n=num;
+        while(num != 0)
+        {
+            rem = num % 10;
+            rev = rev*10 + rem;
+            num /= 10;
+        }
+        if (n==rev)
+        System.out.println(n + " is a palindrome.");
+        else
+        System.out.println(n + " is not a palindrome.");
+    }
+}
